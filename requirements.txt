@@ -1,0 +1,7 @@
+setproctitle
+numpy
+PyGObject
+opencv-python
+streamlit
+setproctitle
+hailo
