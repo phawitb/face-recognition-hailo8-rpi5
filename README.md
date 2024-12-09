@@ -54,7 +54,7 @@ chmod +x run/save_face.sh
 ```
 - **Run App**
 ```
-./Desktop/face-recognition-hailo8-rpi5/run/save_face.sh
+./Desktop/face-recognition-hailo8-rpi5/run/save_faces.sh --clean
 ./Desktop/face-recognition-hailo8-rpi5/run_all.sh
 ```
 
