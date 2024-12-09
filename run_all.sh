@@ -1,8 +1,10 @@
 #!/bin/bash
 
+PROJECT_DIR="/home/pi/Desktop/face-recognition-hailo8-rpi5"  # edit path to directory -----------
+
 set -e  # Ensure the script stops if any command fails
 
-cd /home/pi/Documents/face-recognition-hailo8-rpi5
+cd $PROJECT_DIR 
 source setup_env.sh
 
 streamlit run run/app.py --server.headless true --server.port 8509 &
