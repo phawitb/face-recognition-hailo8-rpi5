@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-PROJECT_DIR="/home/pi/Desktop/face-recognition-hailo8-rpi5/" # edit directory here -----------------
+PROJECT_DIR="/home/pi/Desktop/face-recognition-hailo8-rpi5" # edit directory here -----------------
 
 function get_ubuntu_version() {
     echo "it's ok"
