@@ -28,16 +28,32 @@ hailortcli fw-control identify
 gst-inspect-1.0 hailotools
 gst-inspect-1.0 hailo
 ```
-          
+
+## step2 : Download code and run
+```
+git clone https://github.com/hailo-ai/hailo-rpi5-examples.git
+cd hailo-rpi5-examples
+./install.sh
+```
+```
+cd Desktop
 git clone https://github.com/phawitb/face-recognition-hailo8-rpi5
-# edit directory in run_all.sh
-cd /path/to/face-recognition-hailo8-rpi5
+
+cd face-recognition-hailo8-rpi5
 source setup_env.sh
 pip install -r requirements.txt
 
 chmod +x run_all.sh
 chmod +x run/save_face.sh
 
-
+# edit directory in run_all.sh
+# edit directory in run/save_face.sh
+```
+- Run Program
+```
 ./Desktop/face-recognition-hailo8-rpi5/run/save_face.sh
 ./Desktop/face-recognition-hailo8-rpi5/run_all.sh
+```
+
+
+
