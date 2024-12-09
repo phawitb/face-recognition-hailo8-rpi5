@@ -13,4 +13,5 @@ sleep $10
 chromium --start-fullscreen http://localhost:8509 &
 
 sleep $10
-python run/face_recognition.py --input usbcam &
+python run/server.py usbcam &  # usbcam, rpi, file
+# python run/face_recognition.py --input usbcam &
