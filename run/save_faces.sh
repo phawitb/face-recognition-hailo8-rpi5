@@ -1,12 +1,9 @@
 #!/bin/bash
 set -e
 
+PROJECT_DIR="/home/pi/Desktop/face-recognition-hailo8-rpi5/" # edit directory here -----------------
+
 function get_ubuntu_version() {
-    # ubuntu_version=$(lsb_release -r | awk '{print $2}' | awk -F'.' '{print $1}')
-    # if [ $ubuntu_version -lt 20  ]; then
-    #     echo "ERROR: The save faces pipeline is currently supported for Ubuntu 20.04 OS (Your system is Ubuntu $ubuntu_version)"
-    #     exit 1
-    # fi
     echo "it's ok"
 }
 
@@ -35,25 +32,16 @@ function set_networks() {
     fi
 }
 
-
 function init_variables() {
-    # print_help_if_needed $@
-    # script_dir=$(dirname $(realpath "$0"))
-    # source $script_dir/../../../../../scripts/misc/checks_before_run.sh
 
-    # source /home/pi/Documents/hailo-rpi5-examples/basic_pipelines/checks_before_run.sh
-
-    readonly RESOURCES_DIR="../resources"  #"$TAPPAS_WORKSPACE/apps/h8/gstreamer/general/face_recognition/resources"
-    # readonly POSTPROCESS_DIR="$TAPPAS_WORKSPACE/apps/h8/gstreamer/libs/post_processes/"
-    # readonly APPS_LIBS_DIR="$TAPPAS_WORKSPACE/apps/h8/gstreamer/libs/apps/vms/"
-    readonly CROPPER_SO="$RESOURCES_DIR/libvms_croppers.so" #"$POSTPROCESS_DIR/cropping_algorithms/libvms_croppers.so"
+    readonly RESOURCES_DIR="$PROJECT_DIR/resources"   
+    readonly CROPPER_SO="$RESOURCES_DIR/libvms_croppers.so" 
     readonly DEFAULT_VIDEO_FORMAT="RGB"
     readonly DEFAULT_HEF_PATH="$RESOURCES_DIR/scrfd_10g.hef"
-    readonly RECOGNITION_POST_SO="$RESOURCES_DIR/libface_recognition_post.so" #"$POSTPROCESS_DIR/libface_recognition_post.so"
+    readonly RECOGNITION_POST_SO="$RESOURCES_DIR/libface_recognition_post.so"
 
-    # Face Alignment
-    readonly FACE_ALIGN_SO="$RESOURCES_DIR/libvms_face_align.so" #"$APPS_LIBS_DIR/libvms_face_align.so"
-    readonly POSTPROCESS_SO="$RESOURCES_DIR/libscrfd_post.so" #"$POSTPROCESS_DIR/libscrfd_post.so"
+    readonly FACE_ALIGN_SO="$RESOURCES_DIR/libvms_face_align.so" 
+    readonly POSTPROCESS_SO="$RESOURCES_DIR/libscrfd_post.so"
     readonly FACE_JSON_CONFIG_PATH="$RESOURCES_DIR/configs/scrfd.json"
     readonly FUNCTION_NAME="scrfd_10g"
 
