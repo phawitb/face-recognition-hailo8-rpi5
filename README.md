@@ -47,7 +47,7 @@ source setup_env.sh
 pip install -r requirements.txt
 
 chmod +x run_all.sh
-chmod +x run/save_face.sh
+chmod +x run/save_faces.sh
 
 # edit directory in run_all.sh
 # edit directory in run/save_faces.sh
@@ -59,6 +59,7 @@ python run/server.py --input usbcam --testmode true  # usbcam, rpi, file
 - **Run App**
 ```
 # edit source in run_all.sh
+cd ~
 ./Desktop/face-recognition-hailo8-rpi5/run/save_faces.sh --clean
 ./Desktop/face-recognition-hailo8-rpi5/run_all.sh
 ```
