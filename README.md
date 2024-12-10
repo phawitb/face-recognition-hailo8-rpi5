@@ -68,4 +68,12 @@ git clone https://github.com/Botspot/autostar
 /bin/bash /home/pi/Desktop/face-recognition-hailo8-rpi5/FaceApp.sh
 ```
 
-
+```
+HAILO_DEVICE="/dev/hailo0"
+# Find and kill any processes using the Hailo device
+for pid in $(sudo lsof -t $HAILO_DEVICE); do
+  echo "Terminating process $pid using $HAILO_DEVICE"
+  sudo kill -9 $pid
+done
+echo "All processes using $HAILO_DEVICE have been terminated."
+```
