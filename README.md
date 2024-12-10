@@ -45,6 +45,7 @@ chmod +x install.sh
 ```
 - **Test Hailo facerecognition**
 ```
+source setup_env.sh
 python run/server.py --input usbcam --testmode true  # usbcam, rpi, file
 ```
 - **Run App**
