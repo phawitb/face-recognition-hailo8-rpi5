@@ -1,5 +1,10 @@
+numpy<2.0.0
 setproctitle
+opencv-python
+pytest
+pytest-timeout
 streamlit
+
 # numpy
 # PyGObject
 # opencv-python
