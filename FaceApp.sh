@@ -20,7 +20,7 @@ while true; do
     echo "update faces data....."
     ./run/save_faces.sh
 
-    # run for 900 minutes 
+    # run for 15 minutes(900sec) 
     timeout 900 python run/server.py --input usbcam   # usbcam, rpi, file -----------------
     sleep 1 
 done
