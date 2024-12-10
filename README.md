@@ -42,7 +42,7 @@ chmod +x install.sh
 # edit path in FaceApp.sh
 # edit path in run/save_faces.sh
 # edit path in run/server.py
-# if use ipcamera edit it run/server.py
+# if use ipcamera edit in run/server.py
 ```
 - **Test Hailo facerecognition**
 ```
