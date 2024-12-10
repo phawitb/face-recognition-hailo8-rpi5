@@ -138,15 +138,7 @@ def receiver():
         video_placeholder = st.empty()
         col_his = st.columns(5) 
 
-        # img_placeholders = [None,None,None,None,None]
-        # img_placeholders[0] = col_his[0].empty()
-        # img_placeholders[1] = col_his[1].empty()
-        # img_placeholders[2] = col_his[2].empty()
-        # img_placeholders[3] = col_his[3].empty()
-        # img_placeholders[4] = col_his[4].empty()
-
         img_placeholders = [col_his[i].empty() for i in range(len(col_his))]
-
 
         if os.path.exists(FILE_HISTORY_PATH):
             df = create_hist_table()
@@ -202,6 +194,9 @@ def receiver():
                                     if index < 5:
                                         datetime_str = datetime.datetime.strptime(row['datetime'], "%Y-%m-%d %H:%M:%S.%f").strftime("%d/%m/%y %H:%M:%S")
                                         img_placeholders[index].image(row['img_path'],f"{datetime_str} {row['name']}")
+
+                                        face_image_placeholder.write("")
+                                        person_name_placeholder.subheader("Please scan your face!")
                                     else:
                                         break 
                                 refresh_show_history = False
