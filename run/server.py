@@ -15,26 +15,33 @@ from hailo_rpi_common import (
 )
 import socket
 import json
+import argparse
 
-if len(sys.argv) > 1:  # Check if an argument is passed
-    SOURCE = sys.argv[1]  # First argument after the script name
-    
+parser = argparse.ArgumentParser(description="Process input and test mode parameters.")
+parser.add_argument("--input", type=str, required=True, help="Specify the input value.")
+parser.add_argument("--testmode", type=bool, default=False, help="Enable or disable test mode (true/false).")
+args = parser.parse_args()
+SOURCE = args.input
+TEST_MODE = args.testmode
+print(f"Input: {SOURCE}")
+print(f"Test Mode: {TEST_MODE}")
+
+if TEST_MODE:
+    NO_VDO = False
 else:
-    SOURCE = 'file'
+    NO_VDO = True
 
-# SOURCE = 'rpi' # usbcam, file
-NO_VDO = True
-
-host = '127.0.0.1'  
-port = 65432         
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#waiting for socket avalabel
-while True:
-    try:
-        s.connect((host, port))
-        break
-    except:
-        pass
+if not TEST_MODE:
+    host = '127.0.0.1'  
+    port = 65432         
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #waiting for socket avalabel
+    while True:
+        try:
+            s.connect((host, port))
+            break
+        except:
+            pass
 
 # Initialize GStreamer
 Gst.init(None)
@@ -152,17 +159,18 @@ def app_callback(pad, info):
     print('\ndatas::::::',datas)
     print('frame::::::',frame.shape)
 
-    #sent data
-    json_data = json.dumps(datas)
-    json_bytes = json_data.encode()
-    _, encoded_frame = cv2.imencode('.jpg', frame)
-    frame_bytes = encoded_frame.tobytes()
-    json_size = len(json_bytes)
-    s.sendall(json_size.to_bytes(4, byteorder='big'))
-    s.sendall(json_bytes)
-    frame_size = len(frame_bytes)
-    s.sendall(frame_size.to_bytes(4, byteorder='big'))
-    s.sendall(frame_bytes)
+    if not TEST_MODE:
+        #sent data
+        json_data = json.dumps(datas)
+        json_bytes = json_data.encode()
+        _, encoded_frame = cv2.imencode('.jpg', frame)
+        frame_bytes = encoded_frame.tobytes()
+        json_size = len(json_bytes)
+        s.sendall(json_size.to_bytes(4, byteorder='big'))
+        s.sendall(json_bytes)
+        frame_size = len(frame_bytes)
+        s.sendall(frame_size.to_bytes(4, byteorder='big'))
+        s.sendall(frame_bytes)
 
 
     # Example: Modify buffer if needed (e.g., metadata insertion)
