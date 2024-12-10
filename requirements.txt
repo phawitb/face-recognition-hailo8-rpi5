@@ -4,8 +4,3 @@ opencv-python
 pytest
 pytest-timeout
 streamlit
-
-# numpy
-# PyGObject
-# opencv-python
-# hailo
