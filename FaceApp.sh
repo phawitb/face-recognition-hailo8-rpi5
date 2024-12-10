@@ -21,6 +21,6 @@ while true; do
     timeout 10 ./run/save_faces.sh
 
     # run for 15 minutes(900sec) 
-    timeout 900 python run/server.py --input usbcam   # edit source [usbcam, rpi, file] -----------------
+    timeout 900 python run/server.py --input usbcam   # edit source [usbcam, rpi, file, ipcam] -----------------
     sleep 1 
 done
