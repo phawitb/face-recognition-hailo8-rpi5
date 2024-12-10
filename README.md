@@ -42,11 +42,12 @@ chmod +x install.sh
 # edit path in FaceApp.sh
 # edit path in run/save_faces.sh
 # edit path in run/server.py
+# if use ipcamera edit it run/server.py
 ```
 - **Test Hailo facerecognition**
 ```
 source setup_env.sh
-python run/server.py --input usbcam --testmode true  # usbcam, rpi, file
+python run/server.py --input usbcam --testmode true  # usbcam, rpi, file, ipcam
 ```
 - **Run App**
 ```
