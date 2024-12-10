@@ -39,8 +39,9 @@ cd face-recognition-hailo8-rpi5
 chmod +x install.sh
 ./install.sh
 
-# edit directory in FaceApp.sh
-# edit directory in run/save_faces.sh
+# edit path in FaceApp.sh
+# edit path in run/save_faces.sh
+# edit path in run/server.py
 ```
 - **Test Hailo facerecognition**
 ```
