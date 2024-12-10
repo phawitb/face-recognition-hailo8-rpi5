@@ -37,7 +37,7 @@ git clone https://github.com/hailo-ai/hailo-rpi5-examples.git
 cd hailo-rpi5-examples
 ./install.sh
 ```
-- **Download Face recognition app**
+- **Install Face recognition app**
 ```
 cd Desktop
 git clone https://github.com/phawitb/face-recognition-hailo8-rpi5
@@ -51,6 +51,10 @@ chmod +x run/save_face.sh
 
 # edit directory in run_all.sh
 # edit directory in run/save_faces.sh
+```
+- **Test Hailo facerecognition**
+```
+python run/server.py --input usbcam --testmode true  # usbcam, rpi, file
 ```
 - **Run App**
 ```
