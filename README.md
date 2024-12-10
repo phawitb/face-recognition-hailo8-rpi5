@@ -61,6 +61,11 @@ cd ~
 update face images in >> face-recognition-hailo8-rpi5/resources/faces/
 update face data in >> face-recognition-hailo8-rpi5/resources/person_data.csv        
 ```
-
+- **Auto Start**
+```
+git clone https://github.com/Botspot/autostar
+~/autostar/main.sh
+/bin/bash /home/pi/Desktop/face-recognition-hailo8-rpi5/FaceApp.sh
+```
 
 
