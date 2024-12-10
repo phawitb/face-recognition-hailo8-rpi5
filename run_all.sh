@@ -12,6 +12,12 @@ streamlit run run/app.py --server.headless true --server.port 8509 &
 sleep $10
 chromium --start-fullscreen http://localhost:8509 &
 
+# sleep $10
+# python run/server.py --input usbcam &  # usbcam, rpi, file
+# # python run/face_recognition.py --input usbcam &
+
 sleep $10
-python run/server.py --input usbcam &  # usbcam, rpi, file
-# python run/face_recognition.py --input usbcam &
+while true; do
+    python run/server.py --input usbcam   # usbcam, rpi, file -----------------
+    sleep 1 
+done
