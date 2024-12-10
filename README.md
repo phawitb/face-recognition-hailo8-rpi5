@@ -29,14 +29,7 @@ gst-inspect-1.0 hailotools
 gst-inspect-1.0 hailo
 ```
 
-## step2 : Download code and run
-- **Install packages from https://github.com/hailo-ai/hailo-rpi5-examples.git**
-```
-cd Desktop
-git clone https://github.com/hailo-ai/hailo-rpi5-examples.git
-cd hailo-rpi5-examples
-./install.sh
-```
+## step2 : Download source code and run
 - **Install Face recognition app**
 ```
 cd Desktop
