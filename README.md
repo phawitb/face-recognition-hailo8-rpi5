@@ -58,6 +58,7 @@ python run/server.py --input usbcam --testmode true  # usbcam, rpi, file
 ```
 - **Run App**
 ```
+# edit source in run_all.sh
 ./Desktop/face-recognition-hailo8-rpi5/run/save_faces.sh --clean
 ./Desktop/face-recognition-hailo8-rpi5/run_all.sh
 ```
