@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_DIR="/home/pi/Desktop/face-recognition-hailo8-rpi5"  # edit path to directory -----------
+PROJECT_DIR="/home/pi/Desktop/face-recognition-hailo8-rpi5"  # edit path here -----------
 
 cd $PROJECT_DIR 
 source setup_env.sh
@@ -21,6 +21,6 @@ while true; do
     ./run/save_faces.sh
 
     # run for 15 minutes(900sec) 
-    timeout 900 python run/server.py --input usbcam   # usbcam, rpi, file -----------------
+    timeout 900 python run/server.py --input usbcam   # edit source [usbcam, rpi, file] -----------------
     sleep 1 
 done
