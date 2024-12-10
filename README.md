@@ -56,6 +56,11 @@ cd ~
 ./Desktop/face-recognition-hailo8-rpi5/FaceApp.sh
 
 ```
+- **Custom faces**
+```
+update face images in >> face-recognition-hailo8-rpi5/resources/faces/
+update face data in >> face-recognition-hailo8-rpi5/resources/person_data.csv        
+```
 
 
 
