@@ -38,7 +38,6 @@ git clone https://github.com/phawitb/face-recognition-hailo8-rpi5
 cd face-recognition-hailo8-rpi5
 chmod +x install.sh
 ./install.sh
-source setup_env.sh
 
 # edit directory in FaceApp.sh
 # edit directory in run/save_faces.sh
