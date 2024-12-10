@@ -6,6 +6,9 @@ source setup_env.sh
 # Install the required Python dependencies
 pip install -r requirements.txt 
 
+chmod +x run_all.sh
+chmod +x run/save_faces.sh
+
 # pip install -r tests/test_resources/requirements.txt
 
 # # Install additional system dependencies (if needed)
