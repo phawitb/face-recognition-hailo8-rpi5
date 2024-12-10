@@ -185,7 +185,7 @@ elif SOURCE == 'usbcam':
     source_element = f"v4l2src device={usbcam_port[0]} ! videoconvert n-threads=2 qos=false"
 elif SOURCE == 'rpi':
     source_element = "libcamerasrc ! video/x-raw,format=BGR,width=1536,height=864 ! decodebin"
-else SOURCE == 'ipcam'::
+elif SOURCE == 'ipcam'::
     # ip_camera_url = "rtsp://<username>:<password>@<ip_address>:<port>/path"
     source_element = f"rtspsrc location={ip_camera_url} ! rtph264depay ! h264parse ! avdec_h264"
 if NO_VDO:
