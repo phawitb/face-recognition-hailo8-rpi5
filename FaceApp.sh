@@ -8,6 +8,7 @@ source setup_env.sh
 # start ui
 sleep $3
 streamlit run run/app.py --server.headless true --server.port 8509 &
+
 sleep $10
 chromium --start-fullscreen http://localhost:8509 &
 
@@ -22,5 +23,14 @@ while true; do
 
     # run for 15 minutes(900sec) 
     timeout 900 python run/server.py --input usbcam   # edit source [usbcam, rpi, file, ipcam] -----------------
-    sleep 1 
+    
+    sleep 3
+
+    # check streamlit working correctly 
+    if sudo ss -tuln | grep -q ':8509'; then
+        echo "rumning 8509"
+    else
+        echo "no 8509"
+        streamlit run run/app.py --server.headless true --server.port 8509 &
+    fi    
 done
