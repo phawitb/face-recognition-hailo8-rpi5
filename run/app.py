@@ -105,8 +105,8 @@ def create_hist_table():
     return df
 
 def alarmServer(base64_frame,face_id):
-    print('\nsent to server ::::',base64_frame,face_id)
-
+    #print('\nsent to server ::::',base64_frame,face_id)
+    print('sent to server....')
 def save_data(save_history,frame):
     time_now = time.time()
     img_path = f'historys/images/{time_now}.jpg'
@@ -172,7 +172,7 @@ def receiver():
                         json_data = conn.recv(json_size).decode()
                         metadata = json.loads(json_data)
 
-                        print('metadata:::::',metadata)
+                        #print('metadata:::::',metadata)
 
                         face_id_max = None
                         save_history = False
@@ -281,4 +281,8 @@ def receiver():
                         st.write(metadata)
 
 if __name__ == "__main__":
-    receiver()
+    while True:
+        try:
+            receiver()
+        except:
+            pass
